@@ -54,13 +54,16 @@ function multiply(number1, number2) {
 }
 
 function divide(number1, number2) {
-  const result = number1 / number2;
-  if (number1 > 0 && number2 === 0) {
-    return "Undefined";
-  } else if (number1 === 0 && number2 === 0) {
-    return "Infinity";
+  if (number2 === 0) {
+    if (number1 > 0) {
+      return "Infinity";
+    } else if (number1 < 0) {
+      return "-Infinity";
+    } else {
+      return "Error: Division by zero";
+    }
   } else {
-    return result;
+    return number1 / number2;
   }
 }
 
